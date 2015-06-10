@@ -1,0 +1,1 @@
+export COVERALLS_SERVICE_NAME=travis-ci
