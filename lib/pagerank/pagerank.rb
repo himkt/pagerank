@@ -48,11 +48,11 @@ module PageRank
         if @back_links[from]
           score = @score[from]
           @back_links[from].each do |to|
-            score += @score[to]
+            score += 0.15 + 0.85 * @score[to]
           end
           @score[from] = score
         else
-          @score[from] = 0
+          @score[from] = 0.15
         end
       end
 
