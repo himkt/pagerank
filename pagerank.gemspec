@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["himkt@klis.tsukuba.ac.jp"]
 
   spec.summary       = %q{Simple pagerank calculator.}
-  spec.description   = %q{It provides you a simple and easy way to calculate pagerank.}
+  spec.description   = %q{This gem provides you a simple and easy way to calculate pagerank.}
   spec.homepage      = "https://github.com/himkt/pagerank"
   spec.license       = "MIT"
 
