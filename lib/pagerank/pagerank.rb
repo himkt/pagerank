@@ -65,9 +65,9 @@ module PageRank
     end
 
     def normalization
-      sum = Math.sqrt(@score.inject(0){|sum, (key, value)| sum+=(value**2)})
+      sum = Math.sqrt(@score.inject(0){|_, (_, value)| sum+=(value**2)})
       norm = @score.map{|key,value|value=value/sum}
-      @score.each_with_index{|(key,value),index|@score[key]=norm[index]}
+      @score.each_with_index{|(key,_),index|@score[key]=norm[index]}
     end
 
     # check convergence
@@ -76,5 +76,4 @@ module PageRank
     end
 
   end
-
 end
