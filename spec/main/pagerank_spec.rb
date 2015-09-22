@@ -20,13 +20,13 @@ describe Pagerank do
     expect(pr.add("c","b").class).to eq Array
   end
 
-  # check whether rank can be calculated
+  # check whether rank can be computed
   it 'calculate a pagerank' do
     pr = PageRank::Main.new
     pr.add("a","c")
     pr.add("b","c")
     pr.add("c","b")
-    expect(pr.calculate).to eq true
+    expect(pr.compute).to eq true
     expect(pr.score.class).to eq Hash
   end
 
