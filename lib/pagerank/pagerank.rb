@@ -38,8 +38,8 @@ module PageRank
       @back_links[to] << from
     end
 
-    # calculate pagerank
-    def calculate
+    # compute pagerank
+    def compute
       if @score == {}
         initial_value
       end
@@ -60,12 +60,12 @@ module PageRank
 
       @iterates += 1
       # return true if convergence?
-      return calculate unless @iterates == 1
+      return @score unless @iterates == 1
       return true
     end
 
     def normalization
-      sum = Math.sqrt(@score.inject(0){|_, (_, value)| sum+=(value**2)})
+      sum = Math.sqrt(@score.inject(0){|tmp_sum, (_, value)| tmp_sum+=(value**2)})
       norm = @score.map{|key,value|value=value/sum}
       @score.each_with_index{|(key,_),index|@score[key]=norm[index]}
     end
